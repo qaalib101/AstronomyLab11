@@ -1,0 +1,34 @@
+<h1>{{ apod.title }}</h1>
+
+{{#if apod.is_image }}
+
+    <img src="{{apod.url}}">
+
+{{else}}
+
+    <p>This picture is a video or other media type. Please
+        <a href="{{apod.nasa_url}}">click here to view.</a>
+    </p>
+
+{{/if}}
+
+<P>{{ apod.credit }}</p>
+<p>{{ apod.explanation }}</p>
+<p>This is NASA's Astronomy Picture of the Day for {{ apod.date }}.</p>
+
+<P><a href="{{ apod.nasa_url }}">See this image at NASA's website</a></p>
+
+<div id="add-favorite-form">
+    <form action="/favorites/add" method="POST">
+        <input type="hidden" name="title" value="{{ apod.title }}">
+        <input type="hidden" name="date" value="{{ apod.date }}">
+        <input type="hidden" name="url" value="{{ apod.url }}">
+        <input type="hidden" name="nasa_url" value="{{ apod.nasa_url }}">
+        <button type="submit" class="btn btn-success" name="add">Add to Favorites</button>
+    </form>
+</div>
+<div>
+    <p>
+        This site was made by Qaalib Farah
+    </p>
+</div>
