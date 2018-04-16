@@ -17,16 +17,7 @@ var debug = true;
 
 var baseURL = 'https://api.nasa.gov/planetary/apod';
 
-/**
- Makes a call to the NASA APOD service.
- @param {requstCallback} callback function
- @param type of picture to fetch. If type='random' return a random picture. Otherwise return today's picture.
 
- @callback requestCallback
- @param {Error} error message from APOD call or response processing or null if no error
- @param {JSON} result prcessed JSON data for use in app.
-
- */
 
 function apodRequest(callback, type) {
 

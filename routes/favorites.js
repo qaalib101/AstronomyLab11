@@ -30,6 +30,19 @@ router.post('/add', function(req, res, next){
     // Redirect to the favorites page.
     res.redirect('/favorites');
 });
-
-
+router.post('/deleteAll', function(req, res, next){
+    //delete all
+    console.log(req.session.favorites);
+    if(req.session.favorites){
+        req.session.favorites = []
+    }
+    res.redirect('/');
+});
+router.post('/delete', function(req, res, next){
+    // get index and delete the favorite from the array
+    var index = req.session.favorites.indexOf(req.body.date);
+    console.log(index);
+    req.session.favorites.splice(index, 1);
+    res.redirect('/favorites');
+});
 module.exports = router;

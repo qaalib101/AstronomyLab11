@@ -32,3 +32,6 @@ a {
 .fav-date, .fav-title {
   padding: 20px;
 }
+.deleteButton{
+  color: red;
+}

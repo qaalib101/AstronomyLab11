@@ -12,8 +12,6 @@ router.get('/', function(req, res, next) {
 /* Fetch a picture from NASA's Astronomy Picture of the Day service */
 router.get('/fetchpicture', function(req, res, next){
 
-    // If random picture requested, fetch random picture.
-    // Otherwise fetch today's picture.
 
     apodService(function(err, apod_data){
 
